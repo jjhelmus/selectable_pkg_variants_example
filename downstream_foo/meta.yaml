@@ -1,0 +1,17 @@
+package:
+  name: downstream_foo
+  version: 1.0
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+    - tflow 
+
+test:
+  imports:
+    - downstream_foo
+
+about:
+  summary: "A library which depends on any variant of tflow"
