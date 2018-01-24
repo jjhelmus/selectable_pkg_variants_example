@@ -12,7 +12,7 @@ test:
   imports:
     - tflow
 about:
-  summary: "tflow package with default features"
+  summary: "tflow package with sandybridge optimizations"
 # this is added to ensure that the package gets a hash
 extra:
   tflow_variant: {{ tflow_variant }}
