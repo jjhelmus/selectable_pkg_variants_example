@@ -1,0 +1,38 @@
+# tflow-default is a meta package which refers to the
+# tflow variant package with the default build settings
+package:
+  name: tflow-default
+  version: 1.0
+build:
+  number: 0
+requirements:
+  run:
+    - {{ pin_subpackage('tflow', exact=True) }}
+test:
+  imports:
+    - tflow
+about:
+  summary: "tflow package with default features"
+# this is added to ensure that the package gets a hash
+extra:
+  tflow_variant: {{ tflow_variant }}
+
+# tflow contains the actually package files it should be a variant
+# package so the meta-package and pin exactly to the hash.
+outputs:
+  - name: tflow
+    script: install_tflow.sh
+    requirements:
+      host:
+        - python
+      run:
+        - python
+        - _tflow_variant ==1=default
+    test:
+      imports:
+        - tflow
+    about:
+      summary: "tflow package, can be built in many ways"
+    # this is added to ensure that the package gets a hash
+    extra:
+      tflow_variant: {{ tflow_variant }}
