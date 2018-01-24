@@ -1,0 +1,17 @@
+package:
+  name: downstream_bar
+  version: 1.0
+
+requirements:
+  build:
+    - python
+  run:
+    - python
+    - tflow-gpu
+
+test:
+  imports:
+    - downstream_bar
+
+about:
+  summary: "A library which depends on the gpu variant tflow"
